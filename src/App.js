@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import AuthProvider from "./auth/AuthProvider";
+import AppRouter from "./routers/AppRouter";
+
+
+// AuthProivder, Es un componente que retorna a sus hijos el valor de un contexto
+// es decir, un valor global par que los puedan consumir
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <AuthProvider>
+          <AppRouter />
+      </AuthProvider>
     </div>
   );
 }
